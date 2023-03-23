@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAckground</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        #myDiv {
+  transition: all 0.2s ease-in-out;
+  transform-origin: center center;
+}
+
+.zoom-in {
+  transform: scale(1.2);
+}
+
+#myDiv:hover {
+  cursor: pointer;
+}
+        body {
+            background-color: aqua;
+
+        }
+
+        .toggleclrs {
+            background: rgb(63, 94, 251);
+            background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#button1").click(function() {
+                $("body").toggleClass("toggleclrs");
+            });
+            
+        });
+        
+        $(document).ready(function() {
+  $("#myDiv").hover(
+   function (){
+    $(this).addClass("zoom-in");
+   },
+   function (){
+    $(this).removeClass("zoom-in")
+   }
+  );
+});
+        
+    </script>
+
+</head>
+
+<body>
+    <button id="button1" type="button">Click me</button>
+    <div>
+        <img id="myDiv" src="assets/butterfly1.jpg" style="height: 200px; width: 200px;" alt="btr">
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+     
+        $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#form1").toggle();
+        });
+        $('#btn2').click(function(){
+            $("#form2").toggle();
+        })
+        });
+    </script>
+    
+<form action="" id="form1">
+    <h1>Login Form</h1>
+    Name: <input type="text" id="name1"><br><br>
+    Password: <input type="password" id="name">
+<br><br>
+<button>Log in</button>
+
+</form>
+
+<form action="" id="form2">
+    <h1>Registration Form</h1>
+    Name: <input type="text" id="name2"><br><br>
+    Email: <input type="email" id="email"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    Gender: <input type="radio" name="radio">Male<input type="radio" name="radio">Female<br><br>
+<button>Register</button>
+<br><br>
+</form>
+
+
+
+
+<button id="btn1">Login toggle</button>
+<button id="btn2">Registration toggle</button>
+
+</body>
+</html>

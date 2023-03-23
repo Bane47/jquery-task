@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+</head>
+<body>
+
+   
+        <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+     $("#pic1").hide();
+     $("#pic2").show();
+     $("#pic2").animate({left :"1070px"}, 3000);
+     $("#pic2").hide('slow',function(){
+      $("#pic4").show();
+      $("#pic4").animate({right:"450px"}),4000;
+     
+     });
+     
+    
+         
+      });
+    
+      });
+      
+   
+  </script>
+  <button id="button">Fly</button>
+  <div id="pic1">
+    <img  src="assets/supermanstand.jpg" style=" height: 100px; width: 100px; margin-bottom: 50px; margin-left: -15px;" position="relative" alt="butterfly">
+  </div>
+    <img id="pic2" src="assets/superman2.jfif" style="display: none; position: relative; " alt="bf">
+    <img id="pic3" src="assets/superman3.jfif" style="display: none; position: relative; text-align: center;" alt="bf2">
+    <img id="pic4" src="assets/Superman.jpg" alt="Superman" style="display: none;margin-left: 700px; position: absolute; height: 200px; width: 200px; ">
+</body>
+</html>

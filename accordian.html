@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body><script>
+    $(document).ready(function(){
+        var autocomplete  =  [
+               "Superman",
+               "Batman",
+               "Spiderman",
+               "Iron Man",
+            ];
+            $( "#autocomplete" ).autocomplete({
+               source: autocomplete
+            });
+        $("#image").click(function()
+  {
+    $("#mobileImage").append('<img src="assets/phone3.jfif" alt="phone-image">');
+  });
+
+  $("#image-btn").click(function(){
+    $("#laptopImages").prepend('<img src="assets/laptop3.jfif"  alt="lapimage">')
+  })
+    $("#accordion").accordion();
+    
+   
+    });
+
+
+    
+
+</script>
+<style>
+    .phone1{
+      height: 100px;
+      width: 100px;  
+    }
+    .laptop{
+        height:100px;
+        width:100px;
+    }
+
+</style>
+
+<div id="accordion">
+    <h3>Mobile Phone images</h3>
+    <div id="mobileImage">
+    <img class="phone1" src="assets/phone.webp" alt="">
+    <img class="phone1" src="assets/phone1.jfif" alt="">
+    <button id="image" >ADD image</button>
+    </div>
+    <h3>Laptop images</h3>
+    <div id="laptopImages">
+      <img class="laptop" src="assets/laptop1.jfif" alt="">
+      <img class="laptop"src="assets/laptop2.jfif" alt="">
+      <button id="image-btn" >remove image</button>
+
+    </div>
+    
+    </div>
+ <div >
+    <label for="autocomplete">Tags:</label>
+    <input  id="autocomplete">
+ </div>
+
+</body>
+
+</html>
