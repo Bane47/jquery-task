@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation Plugin Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                    'username': {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 20,
+                        pattern: /^[a-zA-Z]+$/
+                    },
+                    'password': {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 16,
+                        pattern: /^[a-zA-Z]+[@#$%]+[0-9]$/
+                    },
+                    'email': {
+                        required: true,
+                        pattern:/^[a-z0-9]+(?:@)+(?:[a-z])+(?:[.])+(?:[a-z]){2,3}$/
+                    },
+                    'mobile': {
+                        required: true,
+                        pattern: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
+                    }
+                },
+                messages: {
+                    'username': {
+                        required: "Please enter a username",
+                        minlength: "Username must be at least 2 characters long",
+                        maxlength: "Username cannot be longer than 20 characters",
+                        pattern: "Username can only contain alphabets"
+                    },
+                    'password': {
+                        required: "Please enter a password",
+                        minlength: "Password must be at least 8 characters long",
+                        maxlength: "Password cannot be longer than 16 characters",
+                        pattern: "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character @$#"
+                    },
+                    'email': {
+                        required: "Please enter an email address",
+                        email: "Please enter a valid email address"
+                    },
+                    'mobile': {
+                        required: "Please enter a mobile number",
+                        pattern: "Mobile number must be in the format xxx-xxx-xxxx"
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form class="form" id="form1" method="get" action="" name="MyForm">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"><br><br>
+        <label for="mobile">Mobile:</label>
+        <input type="text" name="mobile" id="mobile"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
